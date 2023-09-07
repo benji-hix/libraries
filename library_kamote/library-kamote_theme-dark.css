@@ -79,7 +79,8 @@ button {
     letter-spacing: 1px;
 }
 select {
-    padding: .5rem 1rem;
+    margin-bottom: -.25rem;
+    padding: .25rem 1rem;
     border: none;
     background-color: #4a4042;
     color: #f5f5f5;
@@ -90,7 +91,17 @@ select {
 option {
     font-family: "minerva-modern", sans-serif;
 }
-
+li {
+    width: 100%;
+    letter-spacing: 0;
+    font-size: 1rem;
+    color: #f5f5f5;
+    line-height: 1.375rem;
+    font-weight: normal;
+}
+ul li {
+    list-style: none;
+}
 /* -------------------------------------------------------------------------- */
 /*                                 containers                                 */
 /* -------------------------------------------------------------------------- */
@@ -102,11 +113,12 @@ option {
     margin-right: auto;
 }
 .container-nav-bar {
-    padding: 1rem 28%;
+    padding: 1rem 11%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+    background-color: #151416;
 }
 .container-nav-bar * {
     margin-bottom: 0;
@@ -132,11 +144,70 @@ option {
     padding: 2rem;
     background-color: #2a2627;
 }
+.container {
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    background-color: #2a2627;
+    width: max-content;
+}
 .container-mini {
     display: flex;
     gap: .5rem;
 }
-
+/* -------------------------------------------------------------------------- */
+/*                                   inputs                                   */
+/* -------------------------------------------------------------------------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 1.25rem;
+    
+}
+.input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .25rem;
+}
+.button-circle {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.button-square {
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+}
+.button {
+    transition: 250ms;
+    box-sizing:border-box;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #4a4042;
+    color: #f5f5f5;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+.button-anchor {
+    transition: 250ms;
+    box-sizing:border-box;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #4a4042;
+    color: #f5f5f5;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
 /* -------------------------------------------------------------------------- */
 /*                                    flex                                    */
 /* -------------------------------------------------------------------------- */
@@ -214,7 +285,15 @@ option {
 .bottom-auto {
     margin-bottom: auto;
 }
-
+.margin-b1 {
+    margin-bottom: 1rem;
+}
+.margin-b2 {
+    margin-bottom: 2rem;
+}
+.margin-b3 {
+    margin-bottom: 3rem;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                   sizing                                   */
@@ -289,6 +368,32 @@ option {
 .border-1 {
     border: 1px solid #151416;
 }
+.border-2 {
+    border: 1px solid #ccc1bc;
+}
+.background-off {
+    background: none;
+}
+.textwrap-off {
+    white-space: nowrap;
+}
+.color-crimson1 {
+    color:#7a3833;
+}
+.color-crimson2 {
+    color:#943a34;
+}
+.color-beige1 {
+    color: #ccc1bc;
+}
+.color-beige2 {
+    color: #8a7b79;
+}
+
+/* ---------------------------------- text ---------------------------------- */
+.text-decoration-off {
+    text-decoration: none;
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                    table                                   */
@@ -321,36 +426,7 @@ option {
     border-bottom: 2px solid #1b151975
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                   inputs                                   */
-/* -------------------------------------------------------------------------- */
-.input {
-    display: flex;
-    justify-content: space-between;
-    gap: .5rem;
-}
-.button-circle {
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    box-sizing: border-box;
-}
-.button-square {
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-}
-.button {
-    transition: 250ms;
-    box-sizing:border-box;
-    padding: .5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
-    font-size: .875rem;
-    letter-spacing: 1px;
-}
+
 /* -------------------------------------------------------------------------- */
 /*                               hover functions                              */
 /* -------------------------------------------------------------------------- */
@@ -362,5 +438,8 @@ option {
     color: #943a34;
     cursor: pointer;
 }
-
-
+.mouseover-button-anchor {
+    cursor: pointer;
+    color: #f5f5f5;
+    background-color: #7a3833;
+}

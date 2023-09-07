@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEFAULT</title>
+    <link rel="stylesheet" href="{{ urlfor('static', filename='library-kamote_theme-dark.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="view-main">
+
+        <div class="container-content container-medium border-1">
+            <table class="table">
+                <thead>
+                    <tr class="table-row">
+                        <th>DEFAULT</th>
+                        <th>DEFAULT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for instance in all_data %}
+                    <tr class="table-row">
+                        <td>{{  }}</td>
+                        <td>{{  }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="{{ url_for('static', filename='library-kamote_theme-dark.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

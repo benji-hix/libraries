@@ -1,0 +1,23 @@
+/* --------------- be sure to paste this for jquery functions: -------------- */
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                               hover functions                              */
+/* -------------------------------------------------------------------------- */
+
+// all <a> tags
+$("a").hover(
+    function () {
+      $(this).addClass("mouseover-text");
+    },
+    function () {
+      $(this).removeClass("mouseover-text");
+    });
+  // button class 
+  $(".button").hover(function (){
+      $(this).addClass("mouseover-button");
+  },
+  function () {
+      $(this).removeClass("mouseover-button");
+  });

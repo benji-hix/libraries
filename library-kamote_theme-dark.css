@@ -1,0 +1,366 @@
+/* -------------------------------------------------------------------------- */
+/*                               style defaults                               */
+/* -------------------------------------------------------------------------- */
+@import url("https://use.typekit.net/rca4avu.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "minerva-modern", sans-serif;
+    transition: 250ms;
+}
+body {
+    background-color: #1b1919;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: .75rem;
+}                                                                                                                                                                                                               
+h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: .75rem;
+}
+h3 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: .75rem;
+    color: #943134;
+}                                                                                                                                                                                                               
+h4 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-bottom: .75rem;
+    color: #943134;
+}
+h5 {
+    margin-bottom: .75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #943a34;
+}
+h6 {
+    margin-bottom: .75rem;
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+span {
+    font-size: 1rem;
+    margin-bottom: 0;
+    line-height: 1.25rem;
+}
+p {
+    font-size: 1rem;
+    margin-bottom: 1.125rem;
+    line-height: 1.375rem;
+    letter-spacing: 0;
+    font-weight: normal;
+}
+a {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    color: #f5f5f5;
+}
+button {
+    transition: 250ms;
+    box-sizing:border-box;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #4a4042;
+    color: #f5f5f5;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+select {
+    padding: .5rem 1rem;
+    border: none;
+    background-color: #4a4042;
+    color: #f5f5f5;
+    font-family: "minerva-modern", sans-serif;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+option {
+    font-family: "minerva-modern", sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 containers                                 */
+/* -------------------------------------------------------------------------- */
+.view-main {
+    margin: 3rem auto;
+    max-width: 78%;
+}
+.view-main div:last-of-type {
+    margin-right: auto;
+}
+.container-nav-bar {
+    padding: 1rem 28%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.container-nav-bar * {
+    margin-bottom: 0;
+}
+.container-large {
+    max-width: 75rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    background-color: #2a2627;
+}
+.container-medium {
+    max-width: 50rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    background-color: #2a2627;
+}
+.container-small {
+    max-width: 25rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    background-color: #2a2627;
+}
+.container-mini {
+    display: flex;
+    gap: .5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    flex                                    */
+/* -------------------------------------------------------------------------- */
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.v {
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+/* --------------------------------- justify -------------------------------- */
+.between {
+    justify-content: space-between;
+}
+.evenly {
+    justify-content: space-evenly;
+}
+.around {
+    justify-content: space-around;
+}
+.center-j {
+    justify-content: center;
+}
+.start-j {
+    justify-content: flex-start;
+}
+.end-j {
+    justify-content: flex-end;
+}
+/* ---------------------------------- align --------------------------------- */
+.start-a {
+    align-items: flex-start;
+}
+.center-a {
+    align-items: center;
+}
+.end-a {
+    align-items: flex-end;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+.self-center {
+    align-self: center;
+}
+.self-end {
+    align-self: flex-end;
+}
+/* --------------------------------- margin --------------------------------- */
+.center-h {
+    margin: 0 auto;
+}
+.center-v {
+    margin: auto 0;
+}
+.right-auto {
+    margin-right: auto;
+}
+.left-auto {
+    margin-left: auto;
+}
+.top-auto {
+    margin-top: auto;
+}
+.bottom-auto {
+    margin-bottom: auto;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   sizing                                   */
+/* -------------------------------------------------------------------------- */
+.w2 {
+    width: 2rem;
+}
+.w3 {
+    width: 3rem;
+}
+.w4 {
+    width: 4rem;
+}
+.w5 {
+    width: 5rem;
+}
+.w10 {
+    width: 10rem;
+}
+.w15 {
+    width: 15rem;
+}
+.w20 {
+    width: 20rem;
+}
+.w25 {
+    width: 25rem;
+}
+.w30 {
+    width: 30rem;
+}
+.w35 {
+    width: 35rem;
+}
+.w40 {
+    width: 40rem;
+}
+.w45 {
+    width: 45rem;
+}
+.w50 {
+    width: 50rem;
+}
+.w55 {
+    width: 55rem;
+}
+.w60 {
+    width: 60rem;
+}
+.w65 {
+    width: 65rem;
+}
+.w70 {
+    width: 70rem;
+}
+.w75 {
+    width: 75rem;
+}
+.w80 {
+    width: 80rem;
+}
+.w-half {
+    width: 50%
+}
+.w-max {
+    width: 100%
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    style                                   */
+/* -------------------------------------------------------------------------- */
+.border-1 {
+    border: 1px solid #151416;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    table                                   */
+/* -------------------------------------------------------------------------- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #1b1519;
+}
+.table thead th {
+    background-color: #7a3833;
+}
+.table tbody th {
+    background-color: #7a383350;
+}
+.table th, .table td {
+    padding: .75rem 1rem;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.table tbody tr {
+    border-bottom: 1px solid #1b151975;
+}
+.table tbody tr:nth-of-type(even) {
+    background-color: #1b191540;
+}
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #1b151975
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   inputs                                   */
+/* -------------------------------------------------------------------------- */
+.input {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.button-circle {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.button-square {
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+}
+.button {
+    transition: 250ms;
+    box-sizing:border-box;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #4a4042;
+    color: #f5f5f5;
+    font-size: .875rem;
+    letter-spacing: 1px;
+}
+/* -------------------------------------------------------------------------- */
+/*                               hover functions                              */
+/* -------------------------------------------------------------------------- */
+.mouseover-button {
+    cursor: pointer;
+    background-color: #7a3833;
+}
+.mouseover-text {
+    color: #943a34;
+    cursor: pointer;
+}
+
+

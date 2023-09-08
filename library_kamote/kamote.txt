@@ -1,0 +1,7 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='library-kamote_theme-dark.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{ url_for('static', filename='library-kamote_theme-dark.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"?</script>

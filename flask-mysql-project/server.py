@@ -1,4 +1,5 @@
-from flask_app.controllers import DEFAULT #*link models here*
+from flask_app.controllers import DEFAULT #*link controllers
+
 from flask_app import app
 
 if __name__ == '__main__':

@@ -3,3 +3,6 @@ ERRORS
 'key error'
 ? tried to access a key that doesn't exist in dictionary
 * changed '==' to '=' 
+
+'indexerror: tuple index out of range'
+? tried to access an index that doesn't exist in a tuple

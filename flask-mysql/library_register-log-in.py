@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------- #
-#*                                  model file                                  #
+#``                                  model file                                  #
 # ---------------------------------------------------------------------------- #
 
-#* ---------------------------------- imports --------------------------------- #
+#`` ---------------------------------- imports --------------------------------- #
 import re
 email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
@@ -12,7 +12,7 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         is_valid = True
         query = "SELECT * FROM logins WHERE email = %(email)s"
         data = { 'email': form['form_email']}
-        unique_fail = connectToMySQL(app_database).query_db(query, data)
+        unique_fail = connectToMySQL(app_database).query_db(query, data) #! make sure app_database is defined
 
         # blank forms 
         if len(form['form_first_name']) < 1 or len(form['form_last_name']) < 1 or len(form['form_email']) < 1:
@@ -76,26 +76,77 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
             session['logged_in'] = True
         return is_valid
 
+#~ ---------------------------------- register ---------------------------------- #
+    @classmethod
+    def register(cls, form):
+        password_hash = bcrypt.generate_password_hash(form['form_password'])
+        query = """INSERT INTO users ( first_name, last_name, email, password, created_at, updated_at ) #! table name + values
+                VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(), NOW() );"""
+        data = { 
+            'first_name' : form['form_first_name'],
+            'last_name' : form['form_last_name'],
+            'email' : form['form_email'],
+            'password' : password_hash
+            }
+        return connectToMySQL(app_database).query_db(query, data)
 
-
+#~ --------------------------------- log in  --------------------------------- #
+    @classmethod
+    def log_in(cls, user_id):
+        query = """SELECT * FROM logins
+                WHERE id = %(id)s;"""
+        data = {'id': user_id}
+        results = connectToMySQL(app_database).query_db(query, data)
+        return cls(results[0])
 
 # ---------------------------------------------------------------------------- #
-#*                                controller file                               #
+#``                                controller file                               #
 # ---------------------------------------------------------------------------- #
 
 # ------------- submit register attempt, validate, create, log in ------------ #
-@app.route('/submit_register', methods = ['POST'])
-def submit_registration():
+@app.route('/submit-register', methods = ['POST'])
+def submit_register():
     # preserve text input fields
     session['form_first_name'] = request.form['form_first_name']
     session['form_last_name'] = request.form['form_last_name']
     session['form_email'] = request.form['form_email']
     session['form_password'] = request.form['form_password']
     #* validate
-    if not user_model.User.validate_registration(request.form):
+    if not user_model.User.validate_register(request.form): #! model/class name 
         return redirect('/')
     #~ create login
     register = model_user.User.register(request.form) #! register should change session user_id and logged_in
     #redirect
-    redirect_url = '/welcome/' + str(session['user_id'])
+    redirect_url = '/landing-page/' + str(session['user_id'])
     return redirect(redirect_url)
+
+# ------------------ submit log-in attempt, validate, log in ----------------- #
+@app.route('/submit-login', methods=['POST'])
+def submit_login():
+    # preserve text input fields
+    session['form_email'] = request.form['form_email']
+    session['form_password'] = request.form['form_password']
+    #* validate
+    if not model_user.User.validate_login(request.form): #! model/class name
+        return redirect('/')
+    # redirect
+    redirect_url = '/landing-page/' + str(session['user_id']) #! session['user_id] is set by validate_login
+    return redirect(redirect_url)
+
+# ----------------- post-validation, redirect to landing page ---------------- #
+@app.route("/welcome/<int:user_id>")
+def welcome(user_id):
+    # ensure one can only reach landing page after logging in
+    if not session['logged_in']:
+        return redirect('/')
+    user = user_model.User.log_in(session['user_id'])
+    session['user_name'] = login.first_name
+    #! insert additional data/class methods
+
+    return render_template('landing_page.html', user=user)
+
+# ---------------------------------- log out --------------------------------- #
+@app.route('/logout')
+def log_out():
+    session.clear()
+    return redirect('/')

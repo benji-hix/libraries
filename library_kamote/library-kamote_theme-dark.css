@@ -101,9 +101,13 @@ ul li {
 input[type=text] {
     width: 100%;
 }
+input[type=password] {
+    width: 100%;
+}
 textarea {
     width: 100%;
 }
+
 /* -------------------------------------------------------------------------- */
 /**                                 containers                                 */
 /* -------------------------------------------------------------------------- */
@@ -194,6 +198,7 @@ textarea {
     gap: .5rem;
     margin-bottom: .25rem;
     width: 100%;
+    padding: 0;
 }
 .button {
     transition: 250ms;
@@ -252,6 +257,14 @@ textarea {
     text-decoration: none;
     font-size: .875rem;
     letter-spacing: 1px;
+}
+.date-time {
+    box-sizing: border-box;
+    height: 2rem;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* -------------------------------------------------------------------------- */
 /*~                                    flex                                    */
@@ -505,6 +518,19 @@ textarea {
 /* -------------------------------------------------------------------------- */
 /*~                                 width (.w)                                 */
 /* -------------------------------------------------------------------------- */
+
+.w-content {
+    width: fit-content;
+}
+.w-half {
+    width: 50%;
+}
+.w-max {
+    width: 100%;
+}
+.w1 {
+    width: 1rem;
+}
 .w2 {
     width: 2rem;
 }
@@ -562,13 +588,61 @@ textarea {
 .w80 {
     width: 80rem;
 }
-.w-half {
-    width: 50%
-}
-.w-max {
-    width: 100%
-}
 
+/* -------------------------------------------------------------------------- */
+/*~                                 height (.h)                                */
+/* -------------------------------------------------------------------------- */
+.h-content {
+    height: fit-content;
+}
+.h-half {
+    height: 50%;
+}
+.h-max {
+    height: 100%;
+}
+.h1 {
+    height: 1rem;
+}
+.h2 {
+    height: 2rem;
+}
+.h3 {
+    height: 3rem;
+}
+.h4 {
+    height: 4rem;
+}
+.h5 {
+    height: 5rem;
+}
+.h10 {
+    height: 10rem;
+}
+.h15 {
+    height: 15rem;
+}
+.h20 {
+    height: 20rem;
+}
+.h25 {
+    height: 25rem;
+}
+.h30 {
+    height: 30rem;
+}
+.h35 {
+    height: 35rem;
+}
+.h40 {
+    height: 40rem;
+}
+.h45 {
+    height: 45rem;
+}
+.h50 {
+    height: 50rem;
+}
 /* -------------------------------------------------------------------------- */
 /*`                                    style                                   */
 /* -------------------------------------------------------------------------- */

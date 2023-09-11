@@ -1,0 +1,5 @@
+ERRORS
+
+'key error'
+? tried to access a key that doesn't exist in dictionary
+* changed '==' to '=' 

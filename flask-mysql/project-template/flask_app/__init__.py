@@ -1,6 +1,8 @@
 from flask import Flask
+from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 app.secret_key = "DEFAULT"
+bcrypt = Bcrypt(app)
 
-app_database = 'DEFAULT' #*insert any app-wide database here*
+app_database = ''#! database here 

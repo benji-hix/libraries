@@ -134,8 +134,9 @@ def ???_submit_update():
         data = {'user_id' : session['user_id'] }
         return connectToMySQL(app_database).query_db(query, data)
 
+#* --------------------------------- many join -------------------------------- #
 
-# -------------------------------- one to many ------------------------------- #
+# -------------------------------- read?? with ??------------------------------- #
     @classmethod
     def read_???_with_???( cls , pk ):
         query = """SELECT * 

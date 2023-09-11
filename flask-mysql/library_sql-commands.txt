@@ -1,0 +1,5 @@
+Calculate time since:
+
+"""SELECT *, timestampdiff(hour, timestamp(created_at), current_timestamp )
+as hours_elapsed from ???
+"""

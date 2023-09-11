@@ -4,27 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEFAULT</title>
-    <link rel="stylesheet" href="library-kamote_theme-dark.css">
+    <link rel="stylesheet" href="library_kamote.css">
 </head>
 <body>
-    <div class="viewport">
-        <!-- ----------------------------------------------------------------------- -->
-        <!--                                 nav bar                                 -->
-        <!-- ----------------------------------------------------------------------- -->
-        <div class="container-nav-bar">
-            <h1>DEFAULT</h1>
-            <h6 class="center-h">DEFAULT</h6>
-            <a href="konmari.com">DEFAULT</a>
-            <a href="konmari.com">DEFAULT</a>
-            <a href="konmari.com">DEFAULT</a>
-            <button type="button">DEFAULT</button>
-        </div>
-        
-        <div class="view-main">
+
+<!-- ----------------------------------------------------------------------- -->
+<!--`                                 nav bar                                 -->
+<!-- ----------------------------------------------------------------------- -->
+<div class="container-nav-bar">
+    <h1>DEFAULT</h1>
+    <h6 class="center-h">DEFAULT</h6>
+    <a href="konmari.com">DEFAULT</a>
+    <a href="konmari.com">DEFAULT</a>
+    <a href="konmari.com">DEFAULT</a>
+    <button type="button" class="button">DEFAULT</button>
+</div>
+
+<div class="view-main">
+<!-- ----------------------------------------------------------------------- -->
+<!--`                                  table                                  -->
+<!-- ----------------------------------------------------------------------- -->
+<div class="container br-1">
+    <table class="table m-b2">
+        <thead>
+            <tr>
+                <th>???</th>
+                <th>???</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for instance in all_data %}
+            <tr>
+                <td>{{  }}</td>
+                <td>{{  }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="button-anchor">???</a>
+</div>
 
 
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="library-kamote_theme-dark.js"></script>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="library-kamote_theme-dark.js"></script>
 </body>
 </html>

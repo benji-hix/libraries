@@ -22,7 +22,7 @@ h1 {
     margin-bottom: .75rem;
 }                                                                                                                                                                                                               
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: .75rem;
 }
@@ -33,7 +33,7 @@ h3 {
     color: #943134;
 }                                                                                                                                                                                                               
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: .75rem;
     color: #943134;
@@ -61,19 +61,6 @@ a {
     margin-bottom: .5rem;
     color: #f5f5f5;
 }
-button {
-    transition: 250ms;
-    box-sizing:border-box;
-    padding: .5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
-    font-size: .875rem;
-    letter-spacing: 1px;
-}
 select {
     margin-bottom: -.25rem;
     padding: .1rem .5rem;
@@ -98,9 +85,6 @@ li {
 ul li {
     list-style: none;
 }
-input[type=text] {
-    width: 100%;
-}
 textarea {
     width: 100%;
 }
@@ -108,7 +92,7 @@ textarea {
 /**                                 containers                                 */
 /* -------------------------------------------------------------------------- */
 .view-main {
-    margin: 3rem auto;
+    margin: 1rem auto;
     max-width: 70rem;
 }
 .view {
@@ -116,7 +100,7 @@ textarea {
     display: flex;
     gap: none;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 .container-nav-bar {
     height: max-content;
@@ -133,12 +117,11 @@ textarea {
 }
 .container {
     box-sizing: border-box;
-    width: max-content;
+    width: fit-content;
+    height: fit-content;
     margin-bottom: 2rem;
     padding: 2rem;
     background-color: #2a2627;
-    width: max-content;
-    height: max-content;
 }
 .container-mini {
     display: flex;
@@ -180,6 +163,7 @@ textarea {
 /*`                                   inputs                                   */
 /* -------------------------------------------------------------------------- */
 .form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -198,6 +182,7 @@ textarea {
 .button {
     transition: 250ms;
     box-sizing:border-box;
+    width: fit-content;
     padding: .5rem 1rem;
     display: flex;
     align-items: center;
@@ -205,10 +190,11 @@ textarea {
     border: none;
     background-color: #4a4042;
     color: #f5f5f5;
-    font-size: .875rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 .button-circle {
+    width: fit-content;
     aspect-ratio: 1/1;
     border-radius: 50%;
     transition: 250ms;
@@ -221,10 +207,11 @@ textarea {
     background-color: #4a4042;
     color: #f5f5f5;
     text-decoration: none;
-    font-size: .875rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 .button-square {
+    width: fit-content;
     aspect-ratio: 1/1;
     transition: 250ms;
     box-sizing:border-box;
@@ -236,10 +223,11 @@ textarea {
     background-color: #4a4042;
     color: #f5f5f5;
     text-decoration: none;
-    font-size: .875rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 .button-anchor {
+    width: fit-content;
     transition: 250ms;
     box-sizing:border-box;
     padding: .5rem 1rem;
@@ -250,8 +238,12 @@ textarea {
     background-color: #4a4042;
     color: #f5f5f5;
     text-decoration: none;
-    font-size: .875rem;
+    font-size: 1rem;
     letter-spacing: 1px;
+}
+.date-time {
+    height: 1rem;
+    padding: .5rem;
 }
 /* -------------------------------------------------------------------------- */
 /*~                                    flex                                    */
@@ -731,6 +723,9 @@ textarea {
 }
 .f1 {
     font-size: 1rem;
+}
+.f1o25 {
+    font-size: 1.25rem;
 }
 .f1o5 {
     font-size: 1.5rem;

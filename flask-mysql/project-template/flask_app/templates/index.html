@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEFAULT</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='library-kamote_theme-dark.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='library_kamote.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- ------------------------------- nav bar ------------------------------- -->
+    <div class="container-nav-bar">
+        <h1 class="m-r-auto">DEFAULT</h1>
+    </div>
+    <!-- ---------------------------- main content ----------------------------- -->
     <div class="view-main">
 
         <!--*content here*-->
 
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="{{ url_for('static', filename='library-kamote_theme-dark.js') }}"></script>
+    <script src="{{ url_for('static', filename='library_kamote.js') }}"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
     @staticmethod
     def validate_register(form): 
         is_valid = True
-        query = "SELECT * FROM logins WHERE email = %(email)s"
+        query = "SELECT * FROM users WHERE email = %(email)s"
         data = { 'email': form['form_email']}
         unique_fail = connectToMySQL(app_database).query_db(query, data) #! make sure app_database is defined
 
@@ -31,7 +31,7 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
             is_valid = False
 
         # passwords don't match
-        elif form['form_password'] != form['form_pswd_confirm']:
+        elif form['form_password'] != form['form_confirm_password']:
             flash('Passwords do not match', 'register')
             is_valid = False
         # password must have at least 1 uppercase and 1 number
@@ -57,7 +57,7 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
             is_valid = False
             return is_valid
         # check if email exists in database
-        query = "SELECT * FROM logins WHERE email = %(email)s"
+        query = "SELECT * FROM users WHERE email = %(email)s"
         data = { 'email': form['form_email']}
         found_user = connectToMySQL(app_database).query_db(query, data)
         print(found_user)
@@ -88,20 +88,26 @@ email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
             'email' : form['form_email'],
             'password' : password_hash
             }
+        session['logged_in'] = True
         return connectToMySQL(app_database).query_db(query, data)
 
 #~ --------------------------------- log in  --------------------------------- #
     @classmethod
-    def log_in(cls, user_id):
-        query = """SELECT * FROM logins
+    def login(cls, pk):
+        query = """SELECT * FROM users
                 WHERE id = %(id)s;"""
-        data = {'id': user_id}
+        data = {'id': pk}
         results = connectToMySQL(app_database).query_db(query, data)
         return cls(results[0])
 
 # ---------------------------------------------------------------------------- #
 #``                                controller file                               #
 # ---------------------------------------------------------------------------- #
+
+@app.route('/')
+def index():
+    session['logged_in'] = False
+    return render_template('access.html')
 
 # ------------- submit register attempt, validate, create, log in ------------ #
 @app.route('/submit-register', methods = ['POST'])
@@ -112,10 +118,11 @@ def submit_register():
     session['form_email'] = request.form['form_email']
     session['form_password'] = request.form['form_password']
     #* validate
-    if not user_model.User.validate_register(request.form): #! model/class name 
+    if not model_user.User.validate_register(request.form): 
         return redirect('/')
     #~ create login
-    register = model_user.User.register(request.form) #! register should change session user_id and logged_in
+    register = model_user.User.register(request.form) #! register should change logged_in session variable
+    session['user_id'] = register
     #redirect
     redirect_url = '/landing-page/' + str(session['user_id'])
     return redirect(redirect_url)
@@ -127,26 +134,26 @@ def submit_login():
     session['form_email'] = request.form['form_email']
     session['form_password'] = request.form['form_password']
     #* validate
-    if not model_user.User.validate_login(request.form): #! model/class name
+    if not model_user.User.validate_login(request.form):
         return redirect('/')
     # redirect
     redirect_url = '/landing-page/' + str(session['user_id']) #! session['user_id] is set by validate_login
     return redirect(redirect_url)
 
 # ----------------- post-validation, redirect to landing page ---------------- #
-@app.route("/welcome/<int:user_id>")
-def welcome(user_id):
+@app.route("/landing-page/<int:pk>")
+def welcome(pk):
     # ensure one can only reach landing page after logging in
     if not session['logged_in']:
         return redirect('/')
-    user = user_model.User.log_in(session['user_id'])
-    session['user_name'] = login.first_name
+    user = model_user.User.login(pk)
+    session['user_name'] = user.first_name
     #! insert additional data/class methods
 
-    return render_template('landing_page.html', user=user)
+    return render_template('landing.html', user=user)
 
 # ---------------------------------- log out --------------------------------- #
 @app.route('/logout')
-def log_out():
+def logout():
     session.clear()
     return redirect('/')

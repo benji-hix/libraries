@@ -3,6 +3,11 @@ ERRORS
 'key error'
 ? tried to access a key that doesn't exist in dictionary
 * changed '==' to '=' 
+* opted to select all rather than specific fields in join function
 
 'indexerror: tuple index out of range'
 ? tried to access an index that doesn't exist in a tuple
+
+!!!Big errors caused by **form: 
+the keys in **row take the name of the form value aka form_first_name
+the name of values in %()s in query must reflect this.

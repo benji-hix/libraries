@@ -1,5 +1,4 @@
 .error {
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -7,14 +6,8 @@
     align-items: center;
     background-color: #7a3833;
     padding: 1rem;
+    text-align: center;
 }
-.success {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #305646;
-    padding: 1rem;
+.textarea1 {
+    width: 17rem;
 }

@@ -4,6 +4,18 @@
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 @import url("https://use.typekit.net/rca4avu.css");
+:root {
+    --main-color-dark-1: oklch(21.57% 0.003 17.4);
+    --main-color-dark-2: oklch(19.33% 0.004 308.21);
+    --main-color-medium-1: oklch(38.24% 0.014 4.17);
+    --main-color-medium-2: oklch(27.34% 0.006 0.5);
+    --main-color-light-1: oklch(81.85% 0.014 46.2);
+    --main-color-light-2: oklch(59.6% 0.019 26.76);
+    --main-color-white-1: oklch(97.31% 0 0);
+    --main-color-white-2: oklch(89.87% 0.007 39.46);
+    --main-color-1: oklch(45.99% 0.133 22.33);
+    --main-color-2: oklch(42.69% 0.093 26.14);
+}
 
 * {
     margin: 0;
@@ -12,8 +24,8 @@
     transition: 250ms;
 }
 body {
-    background-color: #1b1919;
-    color: #f5f5f5;
+    background-color: var(--main-color-dark-1);
+    color: var(--main-color-white-1);
     letter-spacing: 1px;
 }
 h1 {
@@ -30,19 +42,19 @@ h3 {
     font-size: 2rem;
     font-weight: normal;
     margin-bottom: .75rem;
-    color: #943134;
+    color: var(--main-color-1);
 }                                                                                                                                                                                                               
 h4 {
     font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: .75rem;
-    color: #943134;
+    color: var(--main-color-1);
 }
 h5 {
     margin-bottom: .75rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #943a34;
+    color: var(--main-color-1);
 }
 h6 {
     margin-bottom: .75rem;
@@ -59,14 +71,14 @@ p {
 a {
     font-size: 1rem;
     margin-bottom: .5rem;
-    color: #f5f5f5;
+    color: var(--main-color-white-1);
 }
 select {
     margin-bottom: -.25rem;
     padding: .1rem .5rem;
     border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
+    background-color: var(--main-color-medium-1);
+    color: var(--main-color-white-1);
     font-family: "minerva-modern", sans-serif;
     font-size: .875rem;
     letter-spacing: 1px;
@@ -75,11 +87,9 @@ option {
     font-family: "minerva-modern", sans-serif;
 }
 li {
-    width: 100%;
     letter-spacing: 0;
     font-size: 1rem;
-    color: #f5f5f5;
-    line-height: 1.375rem;
+    color: var(--main-color-white-1);
     font-weight: normal;
 }
 ul li {
@@ -88,6 +98,10 @@ ul li {
 textarea {
     width: 100%;
 }
+img {
+    width: 100%;
+}
+
 /* -------------------------------------------------------------------------- */
 /**                                 containers                                 */
 /* -------------------------------------------------------------------------- */
@@ -110,7 +124,6 @@ textarea {
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    background-color: #151416;
 }
 .container-nav-bar * {
     margin-bottom: 0;
@@ -121,7 +134,6 @@ textarea {
     height: fit-content;
     margin-bottom: 2rem;
     padding: 2rem;
-    background-color: #2a2627;
 }
 .container-mini {
     display: flex;
@@ -135,13 +147,13 @@ textarea {
 .table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #1b1519;
+    border: 1px solid var(--main-color-dark-1);
 }
 .table thead th {
-    background-color: #7a3833;
+    background-color: var(--main-color-2);
 }
 .table tbody th {
-    background-color: #7a383350;
+    background-color: var(--main-color-2)50;
 }
 .table th, .table td {
     padding: .75rem 1rem;
@@ -151,13 +163,13 @@ textarea {
     font-weight: lighter;
 }
 .table tbody tr {
-    border-bottom: 1px solid #1b151975;
+    border-bottom: 1px solid #1b191940;
 }
 .table tbody tr:nth-of-type(even) {
-    background-color: #1b191540;
+    background-color: #1b191940;
 }
 .table tbody tr:last-of-type {
-    border-bottom: 2px solid #1b151975
+    border-bottom: 2px solid #1b191975
 }
 /* -------------------------------------------------------------------------- */
 /*`                                   inputs                                   */
@@ -188,8 +200,8 @@ textarea {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
+    background-color: var(--main-color-medium-1);
+    color: var(--main-color-white-1);
     font-size: 1rem;
     letter-spacing: 1px;
 }
@@ -204,8 +216,8 @@ textarea {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
+    background-color: var(--main-color-medium-1);
+    color: var(--main-color-white-1);
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -220,8 +232,8 @@ textarea {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
+    background-color: var(--main-color-medium-1);
+    color: var(--main-color-white-1);
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -235,8 +247,8 @@ textarea {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #4a4042;
-    color: #f5f5f5;
+    background-color: var(--main-color-medium-1);
+    color: var(--main-color-white-1);
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -494,6 +506,18 @@ textarea {
     margin-left: 3rem;
 }
 
+/*~ -------------------------------------------------------------------------- */
+/*~ -------------------------------------------------------------------------- */
+/*~ -------------------------------------------------------------------------- */
+/*~                                   sizing                                   */
+/*~ -------------------------------------------------------------------------- */
+/*~ -------------------------------------------------------------------------- */
+/*~ -------------------------------------------------------------------------- */
+
+.aspect-ratio-1 {
+    aspect-ratio: 1 / 1;
+}
+
 /* -------------------------------------------------------------------------- */
 /*~                                 width (.w)                                 */
 /* -------------------------------------------------------------------------- */
@@ -631,35 +655,35 @@ textarea {
 .bg-none {
     background: none;
 }
-.bg-crimson1 {
-    background-color:#943a34;
+.bg-main-1 {
+    background-color:var(--main-color-1);
 }
-.bg-crimson2 {
-    background-color:#7a3833;
+.bg-main-2 {
+    background-color:var(--main-color-2);
 }
-.bg-beige1 {
-    background-color: #ccc1bc;
+.bg-light-1 {
+    background-color: var(--main-color-light-1);
 }
-.bg-beige2 {
-    background-color: #8a7b79;
+.bg-light-2 {
+    background-color: var(--main-color-light-2);
 }
-.bg-grey1 {
-    background-color: #4a4042
+.bg-medium-1 {
+    background-color: var(--main-color-medium-1)
 }
-.bg-grey2 {
-    background-color: #2a2627
+.bg-medium-2 {
+    background-color: var(--main-color-medium-2)
 }
-.bg-black1 {
-    background-color: #1b1919
+.bg-dark-1 {
+    background-color: var(--main-color-dark-1)
 }
-.bg-black2 {
-    background-color: #151416
+.bg-dark-2 {
+    background-color: var(--main-color-dark-2)
 }
-.bg-white1 {
-    background-color: #f6f6f6
+.bg-white-1 {
+    background-color: var(--main-color-white-1)
 }
-.bg-white2 {
-    background-color: #e2dcda
+.bg-white-2 {
+    background-color: var(--main-color-white-2)
 }
 /* -------------------------------------------------------------------------- */
 /*`                                border (.br)                                */
@@ -676,35 +700,35 @@ textarea {
 .br3 {
     border: 3px solid;
 }
-.br-crimson1 {
-    border-color:#943a34;
+.br-main-1 {
+    border-color:var(--main-color-1);
 }
-.br-crimson2 {
-    border-color:#7a3833;
+.br-main-2 {
+    border-color:var(--main-color-2);
 }
-.br-beige1 {
-    border-color: #ccc1bc;
+.br-light-1 {
+    border-color: var(--main-color-light-1);
 }
-.br-beige2 {
-    border-color: #8a7b79;
+.br-light-2 {
+    border-color: var(--main-color-light-2);
 }
-.br-grey1 {
-    border-color: #4a4042
+.br-medium-1 {
+    border-color: var(--main-color-medium-1)
 }
-.br-grey2 {
-    border-color: #2a2627
+.br-medium-2 {
+    border-color: var(--main-color-medium-2)
 }
-.br-black1 {
-    border-color: #1b1919
+.br-dark-1 {
+    border-color: var(--main-color-dark-1)
 }
-.br-black2 {
-    border-color: #151416
+.br-dark-2 {
+    border-color: var(--main-color-dark-2)
 }
-.br-white1 {
-    border-color: #f6f6f6
+.br-white-1 {
+    border-color: var(--main-color-white-1)
 }
-.br-white2 {
-    border-color: #e2dcda
+.br-white-2 {
+    border-color: var(--main-color-white-2)
 }
 
 /* -------------------------------------------------------------------------- */
@@ -756,35 +780,35 @@ textarea {
     font-size: 4rem;
 }
 /*` ------------------------------- text color ------------------------------- */
-.f-crimson1 {
-    color:#943a34;
+.f-main-1 {
+    color:var(--main-color-1);
 }
-.f-crimson2 {
-    color:#7a3833;
+.f-main-2 {
+    color:var(--main-color-2);
 }
-.f-beige1 {
-    color: #ccc1bc;
+.f-light-1 {
+    color: var(--main-color-light-1);
 }
-.f-beige2 {
-    color: #8a7b79;
+.f-light-2 {
+    color: var(--main-color-light-2);
 }
-.f-grey1 {
-    color: #4a4042
+.f-medium-1 {
+    color: var(--main-color-medium-1)
 }
-.f-grey2 {
-    color: #2a2627
+.f-medium-2 {
+    color: var(--main-color-medium-2)
 }
-.f-black1 {
-    color: #1b1919
+.f-dark-1 {
+    color: var(--main-color-dark-1)
 }
-.f-black2 {
-    color: #151416
+.f-dark-2 {
+    color: var(--main-color-dark-2)
 }
-.f-white1 {
-    color: #f6f6f6
+.f-white-1 {
+    color: var(--main-color-white-1)
 }
-.f-white2 {
-    color: #e2dcda
+.f-white-2 {
+    color: var(--main-color-white-2)
 }
 /* -------------------------------------------------------------------------- */
 /*                                miscellaneous                               */
@@ -800,14 +824,14 @@ textarea {
 /* -------------------------------------------------------------------------- */
 .mouseover-button {
     cursor: pointer;
-    background-color: #7a3833;
+    background-color: var(--main-color-2);
 }
 .mouseover-text {
-    color: #943a34;
+    color: var(--main-color-1);
     cursor: pointer;
 }
 .mouseover-button-anchor {
     cursor: pointer;
-    color: #f5f5f5;
-    background-color: #7a3833;
+    color: var(--main-color-white-1);
+    background-color: var(--main-color-2);
 }

@@ -7,7 +7,7 @@
 //*                               hover functions                             */
 /* -------------------------------------------------------------------------- */
 
-//* all <a> tags
+// * all <a> tags
 $("a").hover(
     function () {
     $(this).addClass("mouseover-text");

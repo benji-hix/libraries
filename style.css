@@ -1,0 +1,89 @@
+:root {
+    --transition-speed: 250ms;
+}
+
+.view {
+    margin-left: 4.5rem;
+}
+
+.vertical-navbar {
+    box-sizing: border-box;
+    position: fixed;
+    width: 4.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transition: width var(--transition-speed) ease;
+}
+.navbar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+.container-navbar-link {
+    box-sizing: border-box;
+    width: 4.5rem;
+    height: 3.5rem;
+    padding-inline: 1.25rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: width var(--transition-speed) ease;
+    transition: all 150ms ease-out;
+}
+.navbar-link-icon {
+    aspect-ratio: 1/1;
+    width: 2rem;
+    transition: width var(--transition-speed) ease;
+}
+
+.navbar-link-text {
+    opacity: 0;
+    margin-left: 1.6rem;
+    transition: all 150ms ease-out 0ms;
+}
+.navbar-link-text-test {
+    opacity: 0;
+    margin-left: 3.6rem;
+    transition: all 150ms ease-out 0ms;
+}
+.svg {
+    width: 1rem;
+}
+.test {
+    width: 1.5rem;
+    position: absolute;
+}
+.b {
+    fill: #fafafa;
+}
+/* ---------------------------------- hover --------------------------------- */
+.vertical-navbar:hover {
+    width: 10rem;
+}
+.vertical-navbar:hover .container-navbar-link{
+    width: 10rem;
+    transition: var(--transition-speed) ease;
+}
+.vertical-navbar:hover .navbar-link-text {
+    visibility: visible;
+    opacity: 1;
+    transition: var(--transition-speed) ease;
+}
+.vertical-navbar:hover .navbar-link-text-test {
+    visibility: visible;
+    opacity: 1;
+    transition: var(--transition-speed) ease;
+}
+.container-navbar-link:hover {
+    background-color: #191c1f;
+    color: #b87f8a;
+}
+
+/* .container-navbar-link:hover .b, .c{
+    fill: #b87f8a;
+} */

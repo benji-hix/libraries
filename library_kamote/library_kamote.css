@@ -11,10 +11,10 @@
     --main-color-medium-2: oklch(27.34% 0.006 0.5);
     --main-color-light-1: oklch(81.85% 0.014 46.2);
     --main-color-light-2: oklch(59.6% 0.019 26.76);
-    --main-color-white-1: oklch(97.31% 0 0);
-    --main-color-white-2: oklch(89.87% 0.007 39.46);
-    --main-color-1: oklch(45.99% 0.133 22.33);
-    --main-color-2: oklch(42.69% 0.093 26.14);
+    --main-color-white-1: #FAFAFA;
+    --main-color-white-2: #E8E1E0;
+    --main-color-1: #8C3A35;
+    --main-color-2: #632D2C;
 }
 
 * {

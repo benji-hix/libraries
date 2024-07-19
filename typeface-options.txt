@@ -8,11 +8,13 @@
 - Objektiv Mk3*
 - Source Sans Pro
 
-Preferred default:
+Text default:
 p {
     font-family: objektiv-mk3, sans-serif;
-    font-weight: 300;
-    font-size: 0.8125 rem;
+    /* font-size: 0.8125rem; */
+    font-size: .9rem;
     line-height: 1.375rem;
     letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    font-weight: 300;
 }
